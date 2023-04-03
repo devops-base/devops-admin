@@ -24,7 +24,7 @@ func PayloadFunc(data interface{}) jwt.MapClaims {
 		r, _ := v["role"].(SysRole)
 		return jwt.MapClaims{
 			jwt.IdentityKey:  u.Id,
-			jwt.RoleIdKey:    r.RoleId,
+			jwt.RoleIdKey:    r.Id,
 			jwt.RoleKey:      r.RoleKey,
 			jwt.NiceKey:      u.Username,
 			jwt.DataScopeKey: r.DataScope,
