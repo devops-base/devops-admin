@@ -2,11 +2,11 @@ package service
 
 import (
 	"errors"
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service/dto"
-	cDto "metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	cDto "github.com/devops-base/devops-admin/pkg/common/dto"
 
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/service"
 	"gorm.io/gorm"
 )
 

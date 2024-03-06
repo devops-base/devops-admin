@@ -1,10 +1,10 @@
 package dto
 
 import (
-	"metadata-server/pkg/app/admin/models"
-	common "metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	common "github.com/devops-base/devops-admin/pkg/common/models"
 
-	"metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
 )
 
 // SysMenuGetPageReq 列表或者搜索使用结构体

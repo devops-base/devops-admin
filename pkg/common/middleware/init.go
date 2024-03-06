@@ -1,10 +1,10 @@
 package middleware
 
 import (
-	"git.tz.com/devops/gin-core/sdk"
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-admin/pkg/common/actions"
+	"github.com/devops-base/devops-core/sdk"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
-	"metadata-server/pkg/common/actions"
 )
 
 const (

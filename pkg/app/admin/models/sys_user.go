@@ -1,9 +1,9 @@
 package models
 
 import (
+	"github.com/devops-base/devops-admin/pkg/common/models"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
-	"metadata-server/pkg/common/models"
 )
 
 type SysUser struct {
@@ -42,7 +42,7 @@ func (e *SysUser) GetId() interface{} {
 	return e.ID
 }
 
-//加密
+// 加密
 func (e *SysUser) Encrypt() (err error) {
 	if e.Password == "" {
 		return

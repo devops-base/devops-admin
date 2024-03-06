@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"net/http"
 	"strings"
 

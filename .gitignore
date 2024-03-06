@@ -4,8 +4,8 @@
 static/uploadfile
 main.exe
 *.exe
-metadata-server
-metadata-server.exe
+devops-admin
+devops-admin.exe
 temp/
 !temp
 vendor

@@ -1,12 +1,12 @@
 package tools
 
 import (
-	common "metadata-server/pkg/common/models"
+	common "github.com/devops-base/devops-admin/pkg/common/models"
 	"strings"
 
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
 )
 
 type SysTables struct {

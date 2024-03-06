@@ -1,16 +1,16 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysDept struct {
@@ -55,7 +55,7 @@ func (e SysDept) GetList(c *gin.Context) {
 // @Param deptId query string false "deptId"
 // @Param position query string false "position"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dept [get]
+// @Router /v1/sysDept [get]
 // @Security Bearer
 func (e SysDept) GetPage(c *gin.Context) {
 	s := service.SysDept{}
@@ -85,7 +85,7 @@ func (e SysDept) GetPage(c *gin.Context) {
 // @Tags 部门
 // @Param deptId path string false "deptId"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dept/{deptId} [get]
+// @Router /v1/sysDept/{id} [get]
 // @Security Bearer
 func (e SysDept) Get(c *gin.Context) {
 	s := service.SysDept{}
@@ -120,7 +120,7 @@ func (e SysDept) Get(c *gin.Context) {
 // @Param data body dto.SysDeptInsertReq true "data"
 // @Success 200 {string} string	"{"code": 200, "message": "添加成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "添加失败"}"
-// @Router /api/v1/dept [post]
+// @Router /v1/sysDept [post]
 // @Security Bearer
 func (e SysDept) Insert(c *gin.Context) {
 	s := service.SysDept{}
@@ -147,8 +147,8 @@ func (e SysDept) Insert(c *gin.Context) {
 }
 
 // Update
-// @Summary 修改部门
-// @Description 获取JSON
+// @Summary 修改部门信息
+// @Description 修改部门信息
 // @Tags 部门
 // @Accept  application/json
 // @Product application/json
@@ -156,7 +156,7 @@ func (e SysDept) Insert(c *gin.Context) {
 // @Param data body dto.SysDeptUpdateReq true "body"
 // @Success 200 {string} string	"{"code": 200, "message": "添加成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "添加失败"}"
-// @Router /api/v1/dept/{deptId} [put]
+// @Router /v1/sysDept/{id} [put]
 // @Security Bearer
 func (e SysDept) Update(c *gin.Context) {
 	s := service.SysDept{}
@@ -182,12 +182,12 @@ func (e SysDept) Update(c *gin.Context) {
 
 // Delete
 // @Summary 删除部门
-// @Description 删除数据
+// @Description 删除部门
 // @Tags 部门
 // @Param data body dto.SysDeptDeleteReq true "body"
 // @Success 200 {string} string	"{"code": 200, "message": "删除成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "删除失败"}"
-// @Router /api/v1/dept [delete]
+// @Router /v1/sysDept/{id} [delete]
 // @Security Bearer
 func (e SysDept) Delete(c *gin.Context) {
 	s := service.SysDept{}
@@ -211,7 +211,11 @@ func (e SysDept) Delete(c *gin.Context) {
 	e.OK(req.GetId(), "删除成功")
 }
 
-// Get2Tree 用户管理 左侧部门树
+// Get2Tree 用户管理-左侧部门树
+// @Summary 用户管理-左侧部门树
+// @Description 用户管理-左侧部门树
+// @Router /v1/deptTree [get]
+// @Security Bearer
 func (e SysDept) Get2Tree(c *gin.Context) {
 	s := service.SysDept{}
 	req := dto.SysDeptGetPageReq{}

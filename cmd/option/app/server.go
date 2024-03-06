@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/utils"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/utils"
 	"github.com/spf13/cobra"
 	"text/template"
 )

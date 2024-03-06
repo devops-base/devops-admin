@@ -1,6 +1,6 @@
 package models
 
-import "metadata-server/pkg/common/models"
+import "github.com/devops-base/devops-admin/pkg/common/models"
 
 type SysMenu struct {
 	//MenuId     int       `json:"menuId" gorm:"primaryKey;autoIncrement"`

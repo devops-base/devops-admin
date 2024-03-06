@@ -5,11 +5,11 @@ import (
 	"errors"
 	"time"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/storage"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/storage"
 
-	"metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 type SysOperaLog struct {

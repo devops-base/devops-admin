@@ -1,13 +1,13 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysLoginLog struct {
@@ -25,7 +25,7 @@ type SysLoginLog struct {
 // @Param beginTime query string false "开始时间"
 // @Param endTime query string false "结束时间"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-login-log [get]
+// @Router /v1/sys-login-log [get]
 // @Security Bearer
 func (e SysLoginLog) GetPage(c *gin.Context) {
 	s := service.SysLoginLog{}
@@ -56,7 +56,7 @@ func (e SysLoginLog) GetPage(c *gin.Context) {
 // @Tags 登录日志
 // @Param id path string false "id"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-login-log/{id} [get]
+// @Router /v1/sys-login-log/{id} [get]
 // @Security Bearer
 func (e SysLoginLog) Get(c *gin.Context) {
 	s := service.SysLoginLog{}
@@ -86,7 +86,7 @@ func (e SysLoginLog) Get(c *gin.Context) {
 // @Tags 登录日志
 // @Param data body dto.SysLoginLogDeleteReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-login-log [delete]
+// @Router /v1/sys-login-log [delete]
 // @Security Bearer
 func (e SysLoginLog) Delete(c *gin.Context) {
 	s := service.SysLoginLog{}

@@ -1,21 +1,21 @@
 package router
 
 import (
-	"metadata-server/pkg/app/admin/apis"
+	"github.com/devops-base/devops-admin/pkg/app/admin/apis"
 	"mime"
 
-	"git.tz.com/devops/gin-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/config"
 
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
-	"git.tz.com/devops/gin-core/sdk/pkg/ws"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-core/sdk/pkg/ws"
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
 	swaggerfiles "github.com/swaggo/files"
 
-	_ "metadata-server/docs/admin"
-	"metadata-server/pkg/common/middleware"
-	"metadata-server/pkg/common/middleware/handler"
+	_ "github.com/devops-base/devops-admin/docs"
+	"github.com/devops-base/devops-admin/pkg/common/middleware"
+	"github.com/devops-base/devops-admin/pkg/common/middleware/handler"
 )
 
 func InitSysRouter(r *gin.Engine, authMiddleware *jwt.GinJWTMiddleware) *gin.RouterGroup {
@@ -38,9 +38,6 @@ func sysBaseRouter(r *gin.RouterGroup) {
 	go ws.WebsocketManager.SendService()
 	go ws.WebsocketManager.SendAllService()
 
-	if config.ApplicationConfig.Mode != "prod" {
-		r.GET("/", apis.GoAdmin)
-	}
 	r.GET("/info", handler.Ping)
 }
 

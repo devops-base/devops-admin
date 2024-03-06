@@ -1,6 +1,6 @@
 package models
 
-import "metadata-server/pkg/common/models"
+import "github.com/devops-base/devops-admin/pkg/common/models"
 
 type SysRole struct {
 	Id        int        `json:"id" gorm:"primaryKey;autoIncrement"` // 角色编码

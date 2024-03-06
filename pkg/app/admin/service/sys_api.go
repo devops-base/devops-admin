@@ -4,14 +4,14 @@ import (
 	"errors"
 	"fmt"
 
-	"git.tz.com/devops/gin-core/sdk/runtime"
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/runtime"
+	"github.com/devops-base/devops-core/sdk/service"
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service/dto"
-	"metadata-server/pkg/common/actions"
-	cDto "metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/common/actions"
+	cDto "github.com/devops-base/devops-admin/pkg/common/dto"
 )
 
 type SysApi struct {

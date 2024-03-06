@@ -1,10 +1,10 @@
 package router
 
 import (
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-admin/pkg/app/admin/apis"
+	"github.com/devops-base/devops-admin/pkg/app/other/apis/tools"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
-	"metadata-server/pkg/app/admin/apis"
-	"metadata-server/pkg/app/other/apis/tools"
 )
 
 func init() {
@@ -17,27 +17,7 @@ func sysNoCheckRoleRouter(v1 *gin.RouterGroup, authMiddleware *jwt.GinJWTMiddlew
 		sys := apis.System{}
 		r1.GET("/captcha", sys.GenerateCaptchaHandler)
 	}
-
-	//r := v1.Group("").Use(authMiddleware.MiddlewareFunc())
-	//{
-	//	gen := tools.Gen{}
-	//	r.GET("/gen/preview/:tableId", gen.Preview)
-	//	r.GET("/gen/toproject/:tableId", gen.GenCode)
-	//	r.GET("/gen/apitofile/:tableId", gen.GenApiToFile)
-	//	r.GET("/gen/todb/:tableId", gen.GenMenuAndApi)
-	//	sysTable := tools.SysTable{}
-	//	r.GET("/gen/tabletree", sysTable.GetSysTablesTree)
-	//}
 }
-
-//func registerDBRouter(v1 *gin.RouterGroup, authMiddleware *jwt.GinJWTMiddleware) {
-//	db := v1.Group("/db").Use(authMiddleware.MiddlewareFunc())
-//	{
-//		gen := tools.Gen{}
-//		db.GET("/tables/page", gen.GetDBTableList)
-//		db.GET("/columns/page", gen.GetDBColumnList)
-//	}
-//}
 
 func registerSysTableRouter(v1 *gin.RouterGroup, authMiddleware *jwt.GinJWTMiddleware) {
 	tables := v1.Group("/sys/tables")

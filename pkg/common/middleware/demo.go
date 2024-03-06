@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"git.tz.com/devops/gin-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/config"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

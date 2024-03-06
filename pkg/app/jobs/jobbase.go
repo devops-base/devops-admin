@@ -2,17 +2,17 @@ package jobs
 
 import (
 	"fmt"
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk"
+	models2 "github.com/devops-base/devops-admin/pkg/app/jobs/models"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk"
 	"gorm.io/gorm"
-	models2 "metadata-server/pkg/app/jobs/models"
 	"sync"
 	"time"
 
 	"github.com/robfig/cron/v3"
 
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/cronjob"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/cronjob"
 )
 
 var timeFormat = "2006-01-02 15:04:05"
@@ -63,7 +63,7 @@ func (e *ExecJob) Run() {
 	return
 }
 
-//http 任务接口
+// http 任务接口
 func (h *HttpJob) Run() {
 
 	startTime := time.Now()

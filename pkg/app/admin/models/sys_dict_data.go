@@ -1,7 +1,7 @@
 package models
 
 import (
-	"metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 type SysDictData struct {

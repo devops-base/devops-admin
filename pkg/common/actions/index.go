@@ -4,14 +4,14 @@ import (
 	"errors"
 	"net/http"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/common/dto"
-	"metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 // IndexAction 通用查询动作

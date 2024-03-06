@@ -3,7 +3,7 @@ package dto
 import (
 	"time"
 
-	"metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
 )
 
 type SysLoginLogGetPageReq struct {

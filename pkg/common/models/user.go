@@ -3,7 +3,7 @@ package models
 import (
 	"gorm.io/gorm"
 
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg"
 )
 
 // BaseUser 密码登录基础用户

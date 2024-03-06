@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"git.tz.com/devops/gin-core/config/source/file"
+	"github.com/devops-base/devops-core/config/source/file"
 	"github.com/spf13/cobra"
 
-	"git.tz.com/devops/gin-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/config"
 )
 
 var (

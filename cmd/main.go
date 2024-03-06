@@ -1,6 +1,6 @@
 package main
 
-import "metadata-server/cmd/option"
+import "github.com/devops-base/devops-admin/cmd/option"
 
 //go:generate swag init --parseDependency --parseDepth=6
 

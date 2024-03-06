@@ -1,8 +1,8 @@
 package dto
 
 import (
+	"github.com/devops-base/devops-admin/pkg/common/models"
 	"github.com/gin-gonic/gin"
-	"metadata-server/pkg/common/models"
 )
 
 type Index interface {

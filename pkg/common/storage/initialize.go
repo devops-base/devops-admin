@@ -10,9 +10,9 @@ package storage
 import (
 	"log"
 
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg/captcha"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg/captcha"
 )
 
 // Setup 配置storage组件

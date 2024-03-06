@@ -3,18 +3,18 @@ package database
 import (
 	"time"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk"
-	toolsConfig "git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	mycasbin "git.tz.com/devops/gin-core/sdk/pkg/casbin"
-	toolsDB "git.tz.com/devops/gin-core/tools/database"
-	. "git.tz.com/devops/gin-core/tools/gorm/logger"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk"
+	toolsConfig "github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	mycasbin "github.com/devops-base/devops-core/sdk/pkg/casbin"
+	toolsDB "github.com/devops-base/devops-core/tools/database"
+	. "github.com/devops-base/devops-core/tools/gorm/logger"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 
-	"metadata-server/pkg/common/global"
+	"github.com/devops-base/devops-admin/pkg/common/global"
 )
 
 // Setup 配置数据库

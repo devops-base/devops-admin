@@ -4,21 +4,21 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/common"
 	"io"
 	"io/ioutil"
-	"metadata-server/pkg/app/admin/service/dto"
-	"metadata-server/pkg/common"
 	"net/http"
 	"strings"
 	"time"
 
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
 	"github.com/gin-gonic/gin"
 
-	"metadata-server/pkg/common/global"
+	"github.com/devops-base/devops-admin/pkg/common/global"
 )
 
 // LoggerToFile 日志记录到文件

@@ -1,6 +1,6 @@
 package models
 
-import "metadata-server/pkg/common/models"
+import "github.com/devops-base/devops-admin/pkg/common/models"
 
 type SysPost struct {
 	PostId   int    `gorm:"primaryKey;autoIncrement" json:"postId"` //岗位编号

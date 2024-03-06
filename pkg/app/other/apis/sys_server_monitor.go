@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
 	"github.com/shirou/gopsutil/v3/cpu"
 	"github.com/shirou/gopsutil/v3/disk"
 	"github.com/shirou/gopsutil/v3/host"
@@ -66,7 +66,7 @@ func GetHourDiffer(startTime, endTime string) int64 {
 // @Description 获取JSON
 // @Tags 系统信息
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/server-monitor [get]
+// @Router /v1/server-monitor [get]
 // @Security Bearer
 func (e ServerMonitor) ServerInfo(c *gin.Context) {
 	e.Context = c

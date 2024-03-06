@@ -2,11 +2,11 @@ package models
 
 import (
 	"errors"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"gorm.io/gorm"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/config"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/config"
 )
 
 type DataPermission struct {

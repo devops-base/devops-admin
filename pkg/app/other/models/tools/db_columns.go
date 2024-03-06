@@ -3,8 +3,8 @@ package tools
 import (
 	"errors"
 
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"gorm.io/gorm"
 )
 

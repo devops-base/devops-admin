@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/unrolled/secure"
 
-	"git.tz.com/devops/gin-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/config"
 )
 
 func TlsHandler() gin.HandlerFunc {

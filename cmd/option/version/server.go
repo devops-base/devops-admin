@@ -2,8 +2,8 @@ package version
 
 import (
 	"fmt"
+	"github.com/devops-base/devops-admin/pkg/common/global"
 	"github.com/spf13/cobra"
-	"metadata-server/pkg/common/global"
 )
 
 var (

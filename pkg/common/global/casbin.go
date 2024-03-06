@@ -1,9 +1,9 @@
 package global
 
 import (
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/api"
 	"github.com/casbin/casbin/v2"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
 )
 

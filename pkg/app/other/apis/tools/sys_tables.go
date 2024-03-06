@@ -3,13 +3,13 @@ package tools
 import (
 	"strings"
 
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/app/other/models/tools"
+	"github.com/devops-base/devops-admin/pkg/app/other/models/tools"
 )
 
 type SysTable struct {
@@ -24,7 +24,7 @@ type SysTable struct {
 // @Param pageSize query int false "pageSize / 页条数"
 // @Param pageIndex query int false "pageIndex / 页码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys/tables/page [get]
+// @Router /v1/sys/tables/page [get]
 func (e SysTable) GetPage(c *gin.Context) {
 	e.Context = c
 	log := e.GetLogger()
@@ -65,7 +65,7 @@ func (e SysTable) GetPage(c *gin.Context) {
 // @Tags 工具 / 生成工具
 // @Param configKey path int true "configKey"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys/tables/info/{tableId} [get]
+// @Router /v1/sys/tables/info/{tableId} [get]
 // @Security Bearer
 func (e SysTable) Get(c *gin.Context) {
 	e.Context = c
@@ -151,7 +151,7 @@ func (e SysTable) GetSysTablesTree(c *gin.Context) {
 // @Param tables query string false "tableName / 数据表名称"
 // @Success 200 {string} string	"{"code": 200, "message": "添加成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "添加失败"}"
-// @Router /api/v1/sys/tables/info [post]
+// @Router /v1/sys/tables/info [post]
 // @Security Bearer
 func (e SysTable) Insert(c *gin.Context) {
 	e.Context = c
@@ -305,7 +305,7 @@ func genTableInit(tx *gorm.DB, tablesList []string, i int, c *gin.Context) (tool
 // @Param data body tools.SysTables true "body"
 // @Success 200 {string} string	"{"code": 200, "message": "添加成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "添加失败"}"
-// @Router /api/v1/sys/tables/info [put]
+// @Router /v1/sys/tables/info [put]
 // @Security Bearer
 func (e SysTable) Update(c *gin.Context) {
 	var data tools.SysTables
@@ -338,7 +338,7 @@ func (e SysTable) Update(c *gin.Context) {
 // @Param tableId path int true "tableId"
 // @Success 200 {string} string	"{"code": 200, "message": "删除成功"}"
 // @Success 200 {string} string	"{"code": -1, "message": "删除失败"}"
-// @Router /api/v1/sys/tables/info/{tableId} [delete]
+// @Router /v1/sys/tables/info/{tableId} [delete]
 func (e SysTable) Delete(c *gin.Context) {
 	e.Context = c
 	log := e.GetLogger()

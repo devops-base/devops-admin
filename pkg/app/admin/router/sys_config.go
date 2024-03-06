@@ -1,10 +1,10 @@
 package router
 
 import (
-	"metadata-server/pkg/app/admin/apis"
-	"metadata-server/pkg/common/middleware"
+	"github.com/devops-base/devops-admin/pkg/app/admin/apis"
+	"github.com/devops-base/devops-admin/pkg/common/middleware"
 
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
 )
 

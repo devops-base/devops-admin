@@ -1,9 +1,9 @@
 package dto
 
 import (
-	"git.tz.com/devops/gin-core/tools/search"
+	"github.com/devops-base/devops-admin/pkg/common/global"
+	"github.com/devops-base/devops-core/tools/search"
 	"gorm.io/gorm"
-	"metadata-server/pkg/common/global"
 )
 
 type GeneralDelDto struct {

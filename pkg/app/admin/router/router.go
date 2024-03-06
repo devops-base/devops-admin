@@ -1,8 +1,8 @@
 package router
 
 import (
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
 	_ "github.com/gin-gonic/gin"
 )

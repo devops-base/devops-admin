@@ -1,8 +1,8 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/captcha"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/captcha"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,14 +15,14 @@ type System struct {
 // @Description 获取验证码
 // @Tags 登陆
 // @Success 200 {object} response.Response{data=string,id=string,msg=string} "{"code": 200, "data": [...]}"
-// @Router /api/v1/captcha [get]
+// @Router /v1/captcha [get]
 func (e System) GenerateCaptchaHandler(c *gin.Context) {
 	err := e.MakeContext(c).Errors
 	if err != nil {
 		e.Error(500, err, "服务初始化失败！")
 		return
 	}
-	id, b64s, err := captcha.DriverDigitFunc()
+	id, b64s, _, err := captcha.DriverDigitFunc()
 	if err != nil {
 		e.Logger.Errorf("DriverDigitFunc error, %s", err.Error())
 		e.Error(500, err, "验证码获取失败")

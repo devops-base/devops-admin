@@ -3,9 +3,9 @@ package middleware
 import (
 	"time"
 
-	"git.tz.com/devops/gin-core/sdk/config"
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
-	"metadata-server/pkg/common/middleware/handler"
+	"github.com/devops-base/devops-admin/pkg/common/middleware/handler"
+	"github.com/devops-base/devops-core/sdk/config"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 )
 
 // AuthInit jwt验证new

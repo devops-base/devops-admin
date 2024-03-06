@@ -2,15 +2,15 @@ package apis
 
 import (
 	"fmt"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysDictType struct {
@@ -27,7 +27,7 @@ type SysDictType struct {
 // @Param pageSize query int false "页条数"
 // @Param pageIndex query int false "页码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type [get]
+// @Router /v1/dict/type [get]
 // @Security Bearer
 func (e SysDictType) GetPage(c *gin.Context) {
 	s := service.SysDictType{}
@@ -58,7 +58,7 @@ func (e SysDictType) GetPage(c *gin.Context) {
 // @Tags 字典类型
 // @Param dictId path int true "字典类型编码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type/{dictId} [get]
+// @Router /v1/dict/type/{id} [get]
 // @Security Bearer
 func (e SysDictType) Get(c *gin.Context) {
 	s := service.SysDictType{}
@@ -82,7 +82,7 @@ func (e SysDictType) Get(c *gin.Context) {
 	e.OK(object, "查询成功")
 }
 
-//Insert 字典类型创建
+// Insert 字典类型创建
 // @Summary 添加字典类型
 // @Description 获取JSON
 // @Tags 字典类型
@@ -90,7 +90,7 @@ func (e SysDictType) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysDictTypeInsertReq true "data"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type [post]
+// @Router /v1/dict/type [post]
 // @Security Bearer
 func (e SysDictType) Insert(c *gin.Context) {
 	s := service.SysDictType{}
@@ -117,13 +117,13 @@ func (e SysDictType) Insert(c *gin.Context) {
 
 // Update
 // @Summary 修改字典类型
-// @Description 获取JSON
+// @Description 修改字典类型
 // @Tags 字典类型
 // @Accept  application/json
 // @Product application/json
 // @Param data body dto.SysDictTypeUpdateReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type/{dictId} [put]
+// @Router /v1/dict/type/{id} [put]
 // @Security Bearer
 func (e SysDictType) Update(c *gin.Context) {
 	s := service.SysDictType{}
@@ -153,7 +153,7 @@ func (e SysDictType) Update(c *gin.Context) {
 // @Tags 字典类型
 // @Param dictCode body dto.SysDictTypeDeleteReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type [delete]
+// @Router /v1/dict/type [delete]
 // @Security Bearer
 func (e SysDictType) Delete(c *gin.Context) {
 	s := service.SysDictType{}
@@ -185,7 +185,7 @@ func (e SysDictType) Delete(c *gin.Context) {
 // @Param dictId query string false "dictId"
 // @Param dictType query string false "dictType"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/type-option-select [get]
+// @Router /v1/dict/type-option-select [get]
 // @Security Bearer
 func (e SysDictType) GetAll(c *gin.Context) {
 	s := service.SysDictType{}

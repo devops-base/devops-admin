@@ -3,7 +3,7 @@ package router
 import (
 	"net/http"
 
-	"git.tz.com/devops/gin-core/tools/transfer"
+	"github.com/devops-base/devops-core/tools/transfer"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )

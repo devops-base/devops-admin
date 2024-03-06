@@ -1,12 +1,12 @@
 package dto
 
 import (
+	"github.com/devops-base/devops-admin/pkg/app/jobs/models"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"metadata-server/pkg/app/jobs/models"
 
-	"metadata-server/pkg/common/dto"
-	common "metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
+	common "github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 type SysJobSearch struct {

@@ -3,14 +3,14 @@ package actions
 import (
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 
-	"metadata-server/pkg/common/dto"
-	"metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 // CreateAction 通用新增动作

@@ -1,6 +1,6 @@
 package api
 
-import "metadata-server/pkg/app/other/router"
+import "github.com/devops-base/devops-admin/pkg/app/other/router"
 
 func init() {
 	//注册路由 fixme 其他应用的路由，在本目录新建文件放在init方法

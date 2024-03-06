@@ -1,14 +1,14 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysConfig struct {
@@ -26,7 +26,7 @@ type SysConfig struct {
 // @Param pageSize query int false "页条数"
 // @Param pageIndex query int false "页码"
 // @Success 200 {object} response.Response{data=response.Page{list=[]models.SysApi}} "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-config [get]
+// @Router /v1/config [get]
 // @Security Bearer
 func (e SysConfig) GetPage(c *gin.Context) {
 	s := service.SysConfig{}
@@ -57,7 +57,7 @@ func (e SysConfig) GetPage(c *gin.Context) {
 // @Tags 配置管理
 // @Param id path string false "id"
 // @Success 200 {object} response.Response{data=models.SysConfig} "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-config/{id} [get]
+// @Router /v1/config/{id} [get]
 // @Security Bearer
 func (e SysConfig) Get(c *gin.Context) {
 	req := dto.SysConfigGetReq{}
@@ -91,7 +91,7 @@ func (e SysConfig) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysConfigControl true "body"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "创建成功"}"
-// @Router /api/v1/sys-config [post]
+// @Router /v1/config [post]
 // @Security Bearer
 func (e SysConfig) Insert(c *gin.Context) {
 	s := service.SysConfig{}
@@ -124,7 +124,7 @@ func (e SysConfig) Insert(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysConfigControl true "body"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "修改成功"}"
-// @Router /api/v1/sys-config/{id} [put]
+// @Router /v1/config/{id} [put]
 // @Security Bearer
 func (e SysConfig) Update(c *gin.Context) {
 	s := service.SysConfig{}
@@ -154,7 +154,7 @@ func (e SysConfig) Update(c *gin.Context) {
 // @Tags 配置管理
 // @Param ids body []int false "ids"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "删除成功"}"
-// @Router /api/v1/sys-config [delete]
+// @Router /v1/config [delete]
 // @Security Bearer
 func (e SysConfig) Delete(c *gin.Context) {
 	s := service.SysConfig{}
@@ -184,7 +184,7 @@ func (e SysConfig) Delete(c *gin.Context) {
 // @Description 获取系统配置信息，主要注意这里不在验证权限
 // @Tags 配置管理
 // @Success 200 {object} response.Response{data=map[string]string} "{"code": 200, "data": [...]}"
-// @Router /api/v1/option-config [get]
+// @Router /v1/option-config [get]
 func (e SysConfig) Get2SysApp(c *gin.Context) {
 	req := dto.SysConfigGetToSysAppReq{}
 	s := service.SysConfig{}
@@ -222,7 +222,7 @@ func (e SysConfig) Get2SysApp(c *gin.Context) {
 // @Accept application/json
 // @Product application/json
 // @Success 200 {object} response.Response{data=map[string]interface{}}	"{"code": 200, "message": "修改成功"}"
-// @Router /api/v1/set-config [get]
+// @Router /v1/set-config [get]
 // @Security Bearer
 func (e SysConfig) Get2Set(c *gin.Context) {
 	s := service.SysConfig{}
@@ -256,7 +256,7 @@ func (e SysConfig) Get2Set(c *gin.Context) {
 // @Product application/json
 // @Param data body []dto.GetSetSysConfigReq true "body"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "修改成功"}"
-// @Router /api/v1/set-config [put]
+// @Router /v1/set-config [put]
 // @Security Bearer
 func (e SysConfig) Update2Set(c *gin.Context) {
 	s := service.SysConfig{}
@@ -287,7 +287,7 @@ func (e SysConfig) Update2Set(c *gin.Context) {
 // @Tags 配置管理
 // @Param configKey path string false "configKey"
 // @Success 200 {object} response.Response{data=dto.SysConfigByKeyReq} "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-config/{id} [get]
+// @Router /v1/configKey/{configKey} [get]
 // @Security Bearer
 func (e SysConfig) GetSysConfigByKEYForService(c *gin.Context) {
 	var s = new(service.SysConfig)

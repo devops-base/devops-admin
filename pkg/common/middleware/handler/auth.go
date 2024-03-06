@@ -1,21 +1,21 @@
 package handler
 
 import (
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/common"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/common"
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/captcha"
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-admin/pkg/common/global"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/captcha"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/mssola/user_agent"
-	"metadata-server/pkg/common/global"
 )
 
 func PayloadFunc(data interface{}) jwt.MapClaims {

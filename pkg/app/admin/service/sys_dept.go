@@ -2,17 +2,17 @@ package service
 
 import (
 	"errors"
-	"metadata-server/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/pkg"
 
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/app/admin/service/dto"
-	cDto "metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	cDto "github.com/devops-base/devops-admin/pkg/common/dto"
 
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/service"
 )
 
 type SysDept struct {

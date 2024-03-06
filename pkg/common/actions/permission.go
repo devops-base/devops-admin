@@ -3,11 +3,11 @@ package actions
 import (
 	"errors"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 )

@@ -1,21 +1,20 @@
 package apis
 
 import (
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
 	"github.com/gin-gonic/gin/binding"
 	"golang.org/x/crypto/bcrypt"
-	"log"
-	"metadata-server/pkg/app/admin/models"
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
-	"metadata-server/pkg/common/actions"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/common/actions"
 )
 
 type SysUser struct {
@@ -28,7 +27,7 @@ type SysUser struct {
 // @Tags 用户
 // @Param username query string false "username"
 // @Success 200 {string} {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sysUser [get]
+// @Router /v1/sysUser [get]
 // @Security Bearer
 func (e SysUser) GetPage(c *gin.Context) {
 	s := service.SysUser{}
@@ -65,7 +64,7 @@ func (e SysUser) GetPage(c *gin.Context) {
 // @Tags 用户
 // @Param userId path int true "用户编码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-user/{userId} [get]
+// @Router /v1/sysUser/{id} [get]
 // @Security Bearer
 func (e SysUser) Get(c *gin.Context) {
 	s := service.SysUser{}
@@ -99,7 +98,7 @@ func (e SysUser) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysUserInsertReq true "用户数据"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-user [post]
+// @Router /v1/sysUser [post]
 // @Security Bearer
 func (e SysUser) Insert(c *gin.Context) {
 	s := service.SysUser{}
@@ -134,7 +133,7 @@ func (e SysUser) Insert(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysUserUpdateReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-user/{userId} [put]
+// @Router /v1/sysUser/{id} [put]
 // @Security Bearer
 func (e SysUser) Update(c *gin.Context) {
 	s := service.SysUser{}
@@ -169,7 +168,7 @@ func (e SysUser) Update(c *gin.Context) {
 // @Tags 用户
 // @Param userId path int true "userId"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /v1/sysUser/{userId} [delete]
+// @Router /v1/sysUser/{id} [delete]
 // @Security Bearer
 func (e SysUser) Delete(c *gin.Context) {
 	s := service.SysUser{}
@@ -206,7 +205,7 @@ func (e SysUser) Delete(c *gin.Context) {
 // @Accept multipart/form-data
 // @Param file formData file true "file"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/user/avatar [post]
+// @Router /v1/user/avatar [post]
 // @Security Bearer
 func (e SysUser) InsetAvatar(c *gin.Context) {
 	s := service.SysUser{}
@@ -255,7 +254,7 @@ func (e SysUser) InsetAvatar(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.UpdateSysUserStatusReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/user/status [put]
+// @Router /v1/user/status [put]
 // @Security Bearer
 func (e SysUser) UpdateStatus(c *gin.Context) {
 	s := service.SysUser{}
@@ -292,7 +291,7 @@ func (e SysUser) UpdateStatus(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.ResetSysUserPwdReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/user/pwd/reset [put]
+// @Router /v1/user/pwd/reset [put]
 // @Security Bearer
 func (e SysUser) ResetPwd(c *gin.Context) {
 	s := service.SysUser{}
@@ -329,7 +328,7 @@ func (e SysUser) ResetPwd(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.PassWord true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/user/pwd/set [put]
+// @Router /v1/user/pwd/set [put]
 // @Security Bearer
 func (e SysUser) UpdatePwd(c *gin.Context) {
 	s := service.SysUser{}
@@ -367,7 +366,7 @@ func (e SysUser) UpdatePwd(c *gin.Context) {
 // @Description 获取JSON
 // @Tags 个人中心
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/user/profile [get]
+// @Router /v1/user/profile [get]
 // @Security Bearer
 func (e SysUser) GetProfile(c *gin.Context) {
 	s := service.SysUser{}
@@ -405,7 +404,7 @@ func (e SysUser) GetProfile(c *gin.Context) {
 // @Description 获取JSON
 // @Tags 个人中心
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/getinfo [get]
+// @Router /v1/getUserInfo [get]
 // @Security Bearer
 func (e SysUser) GetInfo(c *gin.Context) {
 	req := dto.SysUserById{}
@@ -459,8 +458,14 @@ func (e SysUser) GetInfo(c *gin.Context) {
 	e.OK(mp, "")
 }
 
+// GetDash
+// @Summary 获取首页
+// @Description 获取首页
+// @Tags 个人中心
+// @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
+// @Router /v1/dashboard [get]
+// @Security Bearer
 func (e SysUser) GetDash(c *gin.Context) {
-	log.Println("ok")
 	err := e.MakeContext(c).Errors
 	if err != nil {
 		e.Logger.Error(err)

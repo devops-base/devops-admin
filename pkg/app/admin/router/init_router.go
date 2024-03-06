@@ -3,10 +3,10 @@ package router
 import (
 	"os"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk"
+	common "github.com/devops-base/devops-admin/pkg/common/middleware"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk"
 	"github.com/gin-gonic/gin"
-	common "metadata-server/pkg/common/middleware"
 )
 
 // InitRouter 路由初始化，不要怀疑，这里用到了

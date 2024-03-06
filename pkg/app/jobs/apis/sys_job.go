@@ -3,12 +3,12 @@ package apis
 import (
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
 
-	"metadata-server/pkg/app/jobs/service"
-	"metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/app/jobs/service"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
 )
 
 type SysJob struct {

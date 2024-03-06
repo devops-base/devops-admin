@@ -1,14 +1,14 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysMenu struct {
@@ -20,7 +20,7 @@ type SysMenu struct {
 // @Description 获取JSON
 // @Tags 菜单
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sysMenu/list [get]
+// @Router /v1/sysMenu/list [get]
 // @Security Bearer
 func (e SysMenu) GetList(c *gin.Context) {
 	m := service.SysMenu{}
@@ -48,7 +48,7 @@ func (e SysMenu) GetList(c *gin.Context) {
 // @Tags 菜单
 // @Param menuName query string false "menuName"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sysMenu [get]
+// @Router /v1/sysMenu [get]
 // @Security Bearer
 func (e SysMenu) GetPage(c *gin.Context) {
 	s := service.SysMenu{}
@@ -78,7 +78,7 @@ func (e SysMenu) GetPage(c *gin.Context) {
 // @Tags 菜单
 // @Param id path string false "id"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/menu/{id} [get]
+// @Router /v1/sysMenu/{id} [get]
 // @Security Bearer
 func (e SysMenu) Get(c *gin.Context) {
 	req := dto.SysMenuGetReq{}
@@ -111,7 +111,7 @@ func (e SysMenu) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysMenuInsertReq true "data"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/menu [post]
+// @Router /v1/sysMenu [post]
 // @Security Bearer
 func (e SysMenu) Insert(c *gin.Context) {
 	req := dto.SysMenuInsertReq{}
@@ -145,7 +145,7 @@ func (e SysMenu) Insert(c *gin.Context) {
 // @Param id path int true "id"
 // @Param data body dto.SysMenuUpdateReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/menu/{id} [put]
+// @Router /v1/sysMenu/{id} [put]
 // @Security Bearer
 func (e SysMenu) Update(c *gin.Context) {
 	req := dto.SysMenuUpdateReq{}
@@ -176,7 +176,7 @@ func (e SysMenu) Update(c *gin.Context) {
 // @Tags 菜单
 // @Param data body dto.SysMenuDeleteReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sysMenu/{id} [delete]
+// @Router /v1/sysMenu/{id} [delete]
 // @Security Bearer
 func (e SysMenu) Delete(c *gin.Context) {
 	req := dto.SysMenuDeleteReq{}
@@ -205,7 +205,7 @@ func (e SysMenu) Delete(c *gin.Context) {
 // @Description 获取JSON
 // @Tags 菜单
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/menurole [get]
+// @Router /v1/menurole [get]
 // @Security Bearer
 func (e SysMenu) GetMenuRole(c *gin.Context) {
 	s := new(service.SysMenu)
@@ -229,44 +229,6 @@ func (e SysMenu) GetMenuRole(c *gin.Context) {
 	e.OK(result, "")
 }
 
-//// GetMenuIDS 获取角色对应的菜单id数组
-//// @Summary 获取角色对应的菜单id数组，设置角色权限使用
-//// @Description 获取JSON
-//// @Tags 菜单
-//// @Param id path int true "id"
-//// @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-//// @Router /api/v1/menuids/{id} [get]
-//// @Security Bearer
-//func (e SysMenu) GetMenuIDS(c *gin.Context) {
-//	s := new(service.SysMenu)
-//	r := service.SysRole{}
-//	m := dto.SysRoleByName{}
-//	err := e.MakeContext(c).
-//		MakeOrm().
-//		Bind(&m, binding.JSON).
-//		MakeService(&s.Service).
-//		MakeService(&r.Service).
-//		Errors
-//	if err != nil {
-//		e.Logger.Error(err)
-//		e.Error(500, err, err.Error())
-//		return
-//	}
-//	var data models.SysRole
-//	err = r.GetWithName(&m, &data).Error
-//
-//	//data.RoleName = c.GetString("role")
-//	//data.UpdateBy = user.GetUserId(c)
-//	//result, err := data.GetIDS(s.Orm)
-//
-//	if err != nil {
-//		e.Logger.Errorf("GetIDS error, %s", err.Error())
-//		e.Error(500, err, "获取失败")
-//		return
-//	}
-//	e.OK(result, "")
-//}
-
 // GetMenuTreeSelect 根据角色ID查询菜单下拉树结构
 // @Summary 角色修改使用的菜单列表
 // @Description 获取JSON
@@ -275,7 +237,7 @@ func (e SysMenu) GetMenuRole(c *gin.Context) {
 // @Product application/json
 // @Param roleId path int true "roleId"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/menuTreeselect/{roleId} [get]
+// @Router /v1/roleMenuTreeselect/{roleId} [get]
 // @Security Bearer
 func (e SysMenu) GetMenuTreeSelect(c *gin.Context) {
 	m := service.SysMenu{}

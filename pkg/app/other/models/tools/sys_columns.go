@@ -1,8 +1,8 @@
 package tools
 
 import (
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
 	"gorm.io/gorm"
-	"metadata-server/pkg/app/admin/models"
 )
 
 type SysColumns struct {

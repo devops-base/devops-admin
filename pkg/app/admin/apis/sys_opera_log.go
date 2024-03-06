@@ -2,12 +2,12 @@ package apis
 
 import (
 	"fmt"
-	"git.tz.com/devops/gin-core/sdk/api"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
 )
 
 type SysOperaLog struct {
@@ -27,7 +27,7 @@ type SysOperaLog struct {
 // @Param beginTime query string false "beginTime"
 // @Param endTime query string false "endTime"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-opera-log [get]
+// @Router /v1/sys-opera-log [get]
 // @Security Bearer
 func (e SysOperaLog) GetPage(c *gin.Context) {
 	s := service.SysOperaLog{}
@@ -61,7 +61,7 @@ func (e SysOperaLog) GetPage(c *gin.Context) {
 // @Tags 操作日志
 // @Param id path string false "id"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-opera-log/{id} [get]
+// @Router /v1/sys-opera-log/{id} [get]
 // @Security Bearer
 func (e SysOperaLog) Get(c *gin.Context) {
 	s := new(service.SysOperaLog)
@@ -92,7 +92,7 @@ func (e SysOperaLog) Get(c *gin.Context) {
 // @Tags 操作日志
 // @Param data body dto.SysOperaLogDeleteReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/sys-opera-log [delete]
+// @Router /v1/sys-opera-log [delete]
 // @Security Bearer
 func (e SysOperaLog) Delete(c *gin.Context) {
 	s := new(service.SysOperaLog)

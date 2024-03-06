@@ -4,10 +4,10 @@ import (
 	"github.com/casbin/casbin/v2/util"
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk"
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

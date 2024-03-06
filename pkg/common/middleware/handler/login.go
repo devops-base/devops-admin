@@ -1,8 +1,8 @@
 package handler
 
 import (
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"gorm.io/gorm"
 )
 

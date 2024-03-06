@@ -1,9 +1,9 @@
 package router
 
 import (
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-admin/pkg/app/other/apis"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
-	"metadata-server/pkg/app/other/apis"
 )
 
 func init() {

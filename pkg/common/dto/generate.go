@@ -4,7 +4,7 @@ import (
 	vd "github.com/bytedance/go-tagexpr/v2/validator"
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/api"
 	"github.com/gin-gonic/gin"
 )
 

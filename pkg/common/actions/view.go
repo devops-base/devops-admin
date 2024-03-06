@@ -2,16 +2,16 @@ package actions
 
 import (
 	"errors"
-	"git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/pkg/response"
 	"net/http"
 
-	log "git.tz.com/devops/gin-core/logger"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	log "github.com/devops-base/devops-core/logger"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/common/dto"
-	"metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/common/models"
 )
 
 // ViewAction 通用详情动作

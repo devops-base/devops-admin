@@ -1,15 +1,15 @@
 package apis
 
 import (
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysDictData struct {
@@ -26,7 +26,7 @@ type SysDictData struct {
 // @Param pageSize query int false "页条数"
 // @Param pageIndex query int false "页码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/data [get]
+// @Router /v1/dict/data [get]
 // @Security Bearer
 func (e SysDictData) GetPage(c *gin.Context) {
 	s := service.SysDictData{}
@@ -59,7 +59,7 @@ func (e SysDictData) GetPage(c *gin.Context) {
 // @Tags 字典数据
 // @Param dictCode path int true "字典编码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict/data/{dictCode} [get]
+// @Router /v1/dict/data/{dictCode} [get]
 // @Security Bearer
 func (e SysDictData) Get(c *gin.Context) {
 	s := service.SysDictData{}
@@ -95,7 +95,7 @@ func (e SysDictData) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysDictDataInsertReq true "data"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "添加成功"}"
-// @Router /api/v1/dict/data [post]
+// @Router /v1/dict/data [post]
 // @Security Bearer
 func (e SysDictData) Insert(c *gin.Context) {
 	s := service.SysDictData{}
@@ -128,7 +128,7 @@ func (e SysDictData) Insert(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysDictDataUpdateReq true "body"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "修改成功"}"
-// @Router /api/v1/dict/data/{dictCode} [put]
+// @Router /v1/dict/data/{dictCode} [put]
 // @Security Bearer
 func (e SysDictData) Update(c *gin.Context) {
 	s := service.SysDictData{}
@@ -158,7 +158,7 @@ func (e SysDictData) Update(c *gin.Context) {
 // @Tags 字典数据
 // @Param dictCode body dto.SysDictDataDeleteReq true "body"
 // @Success 200 {object} response.Response	"{"code": 200, "message": "删除成功"}"
-// @Router /api/v1/dict/data [delete]
+// @Router /v1/dict/data [delete]
 // @Security Bearer
 func (e SysDictData) Delete(c *gin.Context) {
 	s := service.SysDictData{}
@@ -188,7 +188,7 @@ func (e SysDictData) Delete(c *gin.Context) {
 // @Tags 字典数据
 // @Param dictType query int true "dictType"
 // @Success 200 {object} response.Response{data=[]dto.SysDictDataGetAllResp}  "{"code": 200, "data": [...]}"
-// @Router /api/v1/dict-data/option-select [get]
+// @Router /v1/dict-data/option-select [get]
 // @Security Bearer
 func (e SysDictData) GetAll(c *gin.Context) {
 	s := service.SysDictData{}

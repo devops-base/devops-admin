@@ -4,12 +4,12 @@ import (
 	"errors"
 	"time"
 
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/service"
 	"github.com/robfig/cron/v3"
 
-	"metadata-server/pkg/app/jobs"
-	"metadata-server/pkg/app/jobs/models"
-	"metadata-server/pkg/common/dto"
+	"github.com/devops-base/devops-admin/pkg/app/jobs"
+	"github.com/devops-base/devops-admin/pkg/app/jobs/models"
+	"github.com/devops-base/devops-admin/pkg/common/dto"
 )
 
 type SysJob struct {

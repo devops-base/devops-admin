@@ -3,15 +3,15 @@ package apis
 import (
 	"fmt"
 
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysPost struct {
@@ -27,7 +27,7 @@ type SysPost struct {
 // @Param postId query string false "postId"
 // @Param status query string false "status"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/post [get]
+// @Router /v1/post [get]
 // @Security Bearer
 func (e SysPost) GetPage(c *gin.Context) {
 	s := service.SysPost{}
@@ -61,7 +61,7 @@ func (e SysPost) GetPage(c *gin.Context) {
 // @Tags 岗位
 // @Param id path int true "编码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/post/{postId} [get]
+// @Router /v1/post/{id} [get]
 // @Security Bearer
 func (e SysPost) Get(c *gin.Context) {
 	s := service.SysPost{}
@@ -95,7 +95,7 @@ func (e SysPost) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysPostInsertReq true "data"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/post [post]
+// @Router /v1/post [post]
 // @Security Bearer
 func (e SysPost) Insert(c *gin.Context) {
 	s := service.SysPost{}
@@ -127,7 +127,7 @@ func (e SysPost) Insert(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysPostUpdateReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/post/{id} [put]
+// @Router /v1/post/{id} [put]
 // @Security Bearer
 func (e SysPost) Update(c *gin.Context) {
 	s := service.SysPost{}
@@ -159,7 +159,7 @@ func (e SysPost) Update(c *gin.Context) {
 // @Tags 岗位
 // @Param id body dto.SysPostDeleteReq true "请求参数"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/post [delete]
+// @Router /v1/post [delete]
 // @Security Bearer
 func (e SysPost) Delete(c *gin.Context) {
 	s := service.SysPost{}

@@ -1,11 +1,11 @@
 package router
 
 import (
-	jwt "git.tz.com/devops/gin-core/sdk/pkg/jwtauth"
+	"github.com/devops-base/devops-admin/pkg/app/admin/apis"
+	"github.com/devops-base/devops-admin/pkg/common/actions"
+	"github.com/devops-base/devops-admin/pkg/common/middleware"
+	jwt "github.com/devops-base/devops-core/sdk/pkg/jwtauth"
 	"github.com/gin-gonic/gin"
-	"metadata-server/pkg/app/admin/apis"
-	"metadata-server/pkg/common/actions"
-	"metadata-server/pkg/common/middleware"
 )
 
 func init() {

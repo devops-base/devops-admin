@@ -2,10 +2,10 @@ package models
 
 import (
 	"fmt"
+	"github.com/devops-base/devops-admin/pkg/common/global"
 	"gorm.io/gorm"
 	"io/ioutil"
 	"log"
-	"metadata-server/pkg/common/global"
 	"strings"
 )
 

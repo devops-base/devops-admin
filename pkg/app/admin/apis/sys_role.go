@@ -2,20 +2,20 @@ package apis
 
 import (
 	"fmt"
-	"metadata-server/pkg/common/global"
+	"github.com/devops-base/devops-admin/pkg/common/global"
 	"net/http"
 
-	"git.tz.com/devops/gin-core/sdk"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-core/sdk"
 	"github.com/gin-gonic/gin/binding"
-	"metadata-server/pkg/app/admin/models"
 
-	"git.tz.com/devops/gin-core/sdk/api"
-	"git.tz.com/devops/gin-core/sdk/pkg/jwtauth/user"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/api"
+	"github.com/devops-base/devops-core/sdk/pkg/jwtauth/user"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 
-	"metadata-server/pkg/app/admin/service"
-	"metadata-server/pkg/app/admin/service/dto"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
 )
 
 type SysRole struct {
@@ -32,7 +32,7 @@ type SysRole struct {
 // @Param pageSize query int false "页条数"
 // @Param pageIndex query int false "页码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role [get]
+// @Router /v1/sysRole [get]
 // @Security Bearer
 func (e SysRole) GetPage(c *gin.Context) {
 	s := service.SysRole{}
@@ -65,7 +65,7 @@ func (e SysRole) GetPage(c *gin.Context) {
 // @Description Get JSON
 // @Tags 角色/Role
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /v1/sysRole [get]
+// @Router /v1/sysRole/list [get]
 // @Security Bearer
 func (e SysRole) GetList(c *gin.Context) {
 	s := service.SysRole{}
@@ -98,7 +98,7 @@ func (e SysRole) GetList(c *gin.Context) {
 // @Tags 角色/Role
 // @Param roleId path string false "roleId"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role/{id} [get]
+// @Router /v1/sysRole/{id} [get]
 // @Security Bearer
 func (e SysRole) Get(c *gin.Context) {
 	s := service.SysRole{}
@@ -133,7 +133,7 @@ func (e SysRole) Get(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysRoleInsertReq true "data"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role [post]
+// @Router /v1/sysRole [post]
 // @Security Bearer
 func (e SysRole) Insert(c *gin.Context) {
 	s := service.SysRole{}
@@ -178,7 +178,7 @@ func (e SysRole) Insert(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.SysRoleUpdateReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role/{id} [put]
+// @Router /v1/sysRole/{id} [put]
 // @Security Bearer
 func (e SysRole) Update(c *gin.Context) {
 	s := service.SysRole{}
@@ -219,7 +219,7 @@ func (e SysRole) Update(c *gin.Context) {
 // @Tags 角色/Role
 // @Param data body dto.SysRoleDeleteReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role [delete]
+// @Router /v1/sysRole/{id} [delete]
 // @Security Bearer
 func (e SysRole) Delete(c *gin.Context) {
 	s := new(service.SysRole)
@@ -254,7 +254,7 @@ func (e SysRole) Delete(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.UpdateStatusReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role-status/{id} [put]
+// @Router /v1/role-status [put]
 // @Security Bearer
 func (e SysRole) Update2Status(c *gin.Context) {
 	s := service.SysRole{}
@@ -286,7 +286,7 @@ func (e SysRole) Update2Status(c *gin.Context) {
 // @Product application/json
 // @Param data body dto.RoleDataScopeReq true "body"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/role-status/{id} [put]
+// @Router /v1/roledatascope [put]
 // @Security Bearer
 func (e SysRole) Update2DataScope(c *gin.Context) {
 	s := service.SysRole{}

@@ -2,12 +2,12 @@ package tools
 
 import (
 	"errors"
-	"git.tz.com/devops/gin-core/sdk/config"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	_ "git.tz.com/devops/gin-core/sdk/pkg/response"
+	"github.com/devops-base/devops-core/sdk/config"
+	"github.com/devops-base/devops-core/sdk/pkg"
+	_ "github.com/devops-base/devops-core/sdk/pkg/response"
 	"github.com/gin-gonic/gin"
 
-	"metadata-server/pkg/app/other/models/tools"
+	"github.com/devops-base/devops-admin/pkg/app/other/models/tools"
 )
 
 // GetDBTableList 分页列表数据
@@ -18,7 +18,7 @@ import (
 // @Param pageSize query int false "pageSize / 页条数"
 // @Param pageIndex query int false "pageIndex / 页码"
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /api/v1/db/tables/page [get]
+// @Router /v1/db/tables/page [get]
 func (e *Gen) GetDBTableList(c *gin.Context) {
 	//var res response.Response
 	var data tools.DBTables

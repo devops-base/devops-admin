@@ -1,7 +1,7 @@
 package service
 
 import (
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/service"
 )
 
 // SysRoleMenu 即将弃用结构体

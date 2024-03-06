@@ -2,11 +2,11 @@ package tools
 
 import (
 	"errors"
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg"
 
 	"gorm.io/gorm"
 
-	config2 "git.tz.com/devops/gin-core/sdk/config"
+	config2 "github.com/devops-base/devops-core/sdk/config"
 )
 
 type DBTables struct {

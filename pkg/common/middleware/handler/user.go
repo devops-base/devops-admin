@@ -1,8 +1,8 @@
 package handler
 
 import (
+	"github.com/devops-base/devops-admin/pkg/common/models"
 	"gorm.io/gorm"
-	"metadata-server/pkg/common/models"
 )
 
 type SysUser struct {

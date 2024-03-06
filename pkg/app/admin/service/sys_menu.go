@@ -5,16 +5,16 @@ import (
 	"sort"
 	"strings"
 
-	"git.tz.com/devops/gin-core/sdk/pkg"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"github.com/pkg/errors"
 	"gorm.io/gorm"
 
-	"metadata-server/pkg/app/admin/models"
-	"metadata-server/pkg/app/admin/service/dto"
-	cDto "metadata-server/pkg/common/dto"
-	cModels "metadata-server/pkg/common/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/models"
+	"github.com/devops-base/devops-admin/pkg/app/admin/service/dto"
+	cDto "github.com/devops-base/devops-admin/pkg/common/dto"
+	cModels "github.com/devops-base/devops-admin/pkg/common/models"
 
-	"git.tz.com/devops/gin-core/sdk/service"
+	"github.com/devops-base/devops-core/sdk/service"
 )
 
 type SysMenu struct {

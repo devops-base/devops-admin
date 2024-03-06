@@ -3,16 +3,16 @@ package option
 import (
 	"errors"
 	"fmt"
-	"git.tz.com/devops/gin-core/sdk/pkg"
-	"metadata-server/cmd/option/app"
-	"metadata-server/pkg/common/global"
+	"github.com/devops-base/devops-admin/cmd/option/app"
+	"github.com/devops-base/devops-admin/pkg/common/global"
+	"github.com/devops-base/devops-core/sdk/pkg"
 	"os"
 
 	"github.com/spf13/cobra"
 
-	"metadata-server/cmd/option/api"
-	"metadata-server/cmd/option/config"
-	"metadata-server/cmd/option/version"
+	"github.com/devops-base/devops-admin/cmd/option/api"
+	"github.com/devops-base/devops-admin/cmd/option/config"
+	"github.com/devops-base/devops-admin/cmd/option/version"
 )
 
 var rootCmd = &cobra.Command{
@@ -45,7 +45,7 @@ func init() {
 	rootCmd.AddCommand(app.StartCmd)
 }
 
-//Execute : apply commands
+// Execute : apply commands
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(-1)
