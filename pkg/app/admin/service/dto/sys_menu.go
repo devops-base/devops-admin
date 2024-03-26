@@ -158,3 +158,13 @@ type MenuRole struct {
 type SelectRole struct {
 	RoleId int `uri:"roleId"`
 }
+
+// SideMenu 前端菜单树
+type SideMenu struct {
+	Label    string     `json:"label"`
+	Key      string     `json:"key"`
+	Icon     string     `json:"icon"`
+	Rule     string     `json:"rule"`
+	Nav      string     `json:"nav"`
+	Children []SideMenu `json:"children"`
+}

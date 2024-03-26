@@ -312,6 +312,33 @@ func menuLabelCall(eList *[]models.SysMenu, dept dto.MenuLabel) dto.MenuLabel {
 	return dept
 }
 
+// menuUserMenu 构建菜单树
+func cellUserMenu(menuList *[]models.SysMenu, menu models.SysMenu) dto.SideMenu {
+	list := *menuList
+	var sm dto.SideMenu
+	min := make([]dto.SideMenu, 0)
+	for j := 0; j < len(list); j++ {
+		if menu.Id != list[j].ParentId {
+			continue
+		}
+		mi := dto.SideMenu{}
+		//mi.Icon = list[j].Icon
+		mi.Label = list[j].Title
+		mi.Key = list[j].Path
+		mi.Rule = list[j].Permission
+		//mi.Children = []dto.SideMenu{}
+		min = append(min, mi)
+	}
+	sm.Label = menu.Title
+	sm.Rule = menu.Permission
+	sm.Icon = menu.Icon
+	sm.Key = menu.Path
+	if len(min) > 0 {
+		sm.Children = min
+	}
+	return sm
+}
+
 // menuCall 构建菜单树
 func menuCall(menuList *[]models.SysMenu, menu models.SysMenu) models.SysMenu {
 	list := *menuList
@@ -387,14 +414,14 @@ func recursiveSetMenu(orm *gorm.DB, mIds []int, menus *[]models.SysMenu) error {
 }
 
 // SetMenuRole 获取左侧菜单树使用
-func (e *SysMenu) SetMenuRole(roleName string) (m []models.SysMenu, err error) {
+func (e *SysMenu) SetMenuRole(roleName string) (m []dto.SideMenu, err error) {
 	menus, err := e.getByRoleName(roleName)
-	m = make([]models.SysMenu, 0)
+	m = make([]dto.SideMenu, 0)
 	for i := 0; i < len(menus); i++ {
 		if menus[i].ParentId != 0 {
 			continue
 		}
-		menusInfo := menuCall(&menus, menus[i])
+		menusInfo := cellUserMenu(&menus, menus[i])
 		m = append(m, menusInfo)
 	}
 	return

@@ -205,7 +205,7 @@ func (e SysMenu) Delete(c *gin.Context) {
 // @Description 获取JSON
 // @Tags 菜单
 // @Success 200 {object} response.Response "{"code": 200, "data": [...]}"
-// @Router /v1/menurole [get]
+// @Router /v1/userMenu/list [get]
 // @Security Bearer
 func (e SysMenu) GetMenuRole(c *gin.Context) {
 	s := new(service.SysMenu)
