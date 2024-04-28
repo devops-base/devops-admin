@@ -169,6 +169,7 @@ func (e *SysDept) SetDeptTree(c *dto.SysDeptGetPageReq) (m []dto.DeptLabel, err 
 		e := dto.DeptLabel{}
 		e.Id = list[i].Id
 		e.Label = list[i].DeptName
+		e.Value = list[i].Id
 		deptsInfo := deptTreeCall(&list, e)
 
 		m = append(m, deptsInfo)
